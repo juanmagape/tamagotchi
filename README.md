@@ -21,11 +21,6 @@ tomar decisiones que afectan su bienestar.
 -   Cambios de estado según acciones del jugador.
 -   Final de juego si alguno de los atributos llega a un nivel crítico.
 
-## Requisitos
-
--   Java JDK 8 o superior\
--   IDE recomendado: IntelliJ IDEA, Eclipse o similar\
--   Sistema operativo: Windows, macOS o Linux
 
 ## Instalación
 
