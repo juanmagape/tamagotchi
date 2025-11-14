@@ -32,12 +32,13 @@ public class Acciones {
             switch (eleccionAccion) {
                 case 1:
                     System.out.println("Has escogido la opción: Dar de comer");
-                    System.out.println("Cantidad de comida" + cantidadComida);
+                    System.out.println("Cantidad de comida: " + cantidadComida);
 
                     if (cantidadComida == 0) {
                         System.out.println("No tienes comida, ves a comprarla a la tienda");
                     } else {
                         System.out.println("Le has dado de comer");
+                        System.out.println("Reduce el hambre (+3), menos energia (-1) y menos cantidad de comida (-1)");
                         cantidadComida -= 1;
 
                         hambre += 3;
@@ -95,17 +96,17 @@ public class Acciones {
                 case 5:
                     System.out.println("Estadisticas actuales: \n");
 
-                    System.out.println(energia);
-                    System.out.println(hambre);
-                    System.out.println(felicidad);
-                    System.out.println(dinero);
+                    System.out.println("Energia: " + energia);
+                    System.out.println("Hambre: " + hambre);
+                    System.out.println("Felicidad: " + felicidad);
+                    System.out.println("Dinero: " + dinero +"\n");
 
                     if (felicidad > 7 && hambre > 4 && energia > 5) {
                         System.out.println(skin + nombre + ": Feliz y activo");
                     } else if (energia > 7 && hambre < 5) {
                         System.out.println(skin + nombre + ": Está hiperactivo");
                     } else if (felicidad <= 3 && energia <= 3 && hambre <= 3){
-                        System.out.println(skin + nombre + "Está en las ultimas");
+                        System.out.println(skin + nombre + ": Está en las ultimas");
                     }
 
                     if (hambre <= 3) {
@@ -115,7 +116,7 @@ public class Acciones {
                         System.out.println(skin + nombre + ": Está muy cansado, necesita dormir");
                     }
                     if (felicidad <= 3) {
-                        System.out.println(skin + nombre + ": Está triste, juega con él");
+                        System.out.println(skin + " " +nombre + ": Está triste, juega con él");
                     }
 
                     Thread.sleep(1000);
@@ -133,6 +134,9 @@ public class Acciones {
 
         int jugador = (int) (Math.random() * 6) + 1;
         int tamagotchi = (int) (Math.random() * 6) + 1;
+
+        System.out.println("Jugador: " + jugador);
+        System.out.println("Tamagotchi: " + tamagotchi);
 
         if (jugador > tamagotchi) {
             System.out.println("Has ganado!");

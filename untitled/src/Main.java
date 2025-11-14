@@ -5,15 +5,13 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         Scanner print = new Scanner(System.in);
 
-        boolean jugar = true;
         String nombre = "";
         String skin = "";
 
         System.out.println("\nIntroduce el nombre de tu mascota:");
         nombre = print.nextLine();
 
-        skin(print, skin);
-
+        skin = skin(print);
         System.out.println("Antes de empezar a jugar te gustaría modificar algún elemento? (1: Si / 2: No)");
         int seguirPrograma = print.nextInt();
 
@@ -28,7 +26,7 @@ public class Main {
         Acciones.acciones(print, skin, nombre);
     }
 
-    public static void skin(Scanner print, String skin) throws InterruptedException {
+    public static String skin(Scanner print) throws InterruptedException {
 
         System.out.println("Escoge la skin de tu tamagotchi\n");
 
@@ -40,26 +38,11 @@ public class Main {
         int skinEscogida = print.nextInt();
 
         switch (skinEscogida) {
-            case 1:
-                System.out.println("Has escogido la skin: 🐷");
-                skin = "🐷";
-                Thread.sleep(1000);
-                break;
-            case 2:
-                System.out.println("Has escogido la skin: 🐬");
-                skin = "🐬";
-                Thread.sleep(1000);
-                break;
-            case 3:
-                System.out.println("Has escogido la skin: 🐞");
-                skin = "🐞";
-                Thread.sleep(1000);
-                break;
-            case 4:
-                System.out.println("Has escogido la skin: 🕊️");
-                skin = "🕊️";
-                Thread.sleep(1000);
-                break;
+            case 1: System.out.println("Has escogido 🐷"); return "🐷";
+            case 2: System.out.println("Has escogido 🐬"); return "🐬";
+            case 3: System.out.println("Has escogido 🐞"); return "🐞";
+            case 4: System.out.println("Has escogido 🕊️"); return "🕊️";
+            default: System.out.println("Opción inválida, se asigna 🐷"); return "🐷";
         }
     }
 
@@ -76,7 +59,7 @@ public class Main {
             Thread.sleep(1000);
 
         } else if (eleccionModificar == 2) {
-            skin(print, skin);
+            skin = skin(print);
             Thread.sleep(1000);
 
         } else {
