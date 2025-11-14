@@ -25,9 +25,7 @@ public class Main {
             System.out.println("Número introducido incorrecto");
         }
 
-        while (jugar) {
-            Acciones.acciones(print, jugar);
-        }
+        Acciones.acciones(print, skin, nombre);
     }
 
     public static void skin(Scanner print, String skin) throws InterruptedException {
