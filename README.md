@@ -1,7 +1,6 @@
 # Tamagotchi
 
-Bienvenido al proyecto **Tamagotchi** 🎮\
-Un pequeño juego desarrollado en Java que simula la experiencia de
+Tamagotchi es un pequeño juego desarrollado en Java que simula la experiencia de
 cuidar un tamagotchi: alimentarlo, jugar con él y asegurarse de que esté
 feliz y sano.
 
@@ -15,7 +14,7 @@ tomar decisiones que afectan su bienestar.
 ## Características
 
 -   Crear un tamagotchi con atributos como hambre, felicidad y energía.
--   Alimentar al tamagotchi para reducir su nivel de hambre.
+-   Diferentes consumibles que aumentan o disminuyen valores.
 -   Jugar con él para aumentar su felicidad.
 -   Hacer que descanse para recuperar energía.
 -   Cambios de estado según acciones del jugador.
