@@ -38,10 +38,10 @@ public class Main {
 
         System.out.println("Escoge la skin de tu tamagotchi\n");
 
-        System.out.println("1 - 🐷");
-        System.out.println("2 - 🐬");
-        System.out.println("3 - 🐞");
-        System.out.println("4 - 🕊️");
+        System.out.println("{1} - 🐷");
+        System.out.println("{2} - 🐬");
+        System.out.println("{3} - 🐞");
+        System.out.println("{4} - 🕊️");
 
         int skinEscogida = print.nextInt();
 

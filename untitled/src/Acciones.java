@@ -27,12 +27,12 @@ public class Acciones {
 
             System.out.println("\nQue quieres hacer?\n");
 
-            System.out.println("1 - Consumibles");
-            System.out.println("2 - Jugar");
-            System.out.println("3 - Dormir");
-            System.out.println("4 - Tienda");
-            System.out.println("5 - Ver estado");
-            System.out.println("6 - Salir");
+            System.out.println("{1} - Consumibles");
+            System.out.println("{2} - Jugar");
+            System.out.println("{3} - Dormir");
+            System.out.println("{4} - Tienda");
+            System.out.println("{5} - Ver estado");
+            System.out.println("{6} - Salir");
 
             int eleccionAccion = print.nextInt();
 
@@ -189,55 +189,57 @@ public class Acciones {
                                 dinero -= cantidadCompra * 3;
                             }
                             break;
+                            }
 
+                            System.out.println("\n===========================================================\n");
+
+                            Thread.sleep(2000);
+                            break;
+                        case 5:
+                            System.out.println("\n===========================================================\n");
+
+                            System.out.println("Estadisticas actuales: \n");
+
+                            System.out.println("🔥 Energia: " + energia);
+                            System.out.println("🍔 Hambre: " + hambre);
+                            System.out.println("🎉 Felicidad: " + felicidad);
+                            System.out.println("💵 Dinero: " + dinero +"\n");
+
+                            if (felicidad > 7 && hambre > 4 && energia > 5) {
+                                System.out.println(skin + " " + nombre + ": Feliz y activo 😁");
+                            } else if (energia > 7 && hambre < 5) {
+                                System.out.println(skin + " " + nombre + ": Está hiperactivo 🫨");
+                            } else if (felicidad <= 3 && energia <= 3 && hambre <= 3){
+                                System.out.println(skin + " " + nombre + ": Está en las ultimas 😵");
+                            }
+
+                            if (hambre <= 3) {
+                                System.out.println(skin + " " + nombre + ": Tiene hambre, deberias darle de comer 🍥");
+                            }
+                            if (energia <= 3) {
+                                System.out.println(skin + " " + nombre + ": Está muy cansado, necesita dormir 😴");
+                            }
+                            if (felicidad <= 3) {
+                                System.out.println(skin + " " +nombre + ": Está triste, juega con él 🛝");
+                            }
+                            System.out.println("\n===========================================================\n");
+
+                            Thread.sleep(4000);
+                            break;
+                        case 6:
+                            System.out.println("\n\n\n===========================================================\n");
+
+                            System.out.println("Saliendo del programa");
+
+                            System.out.println("\n===========================================================\n");
+
+                            jugar = false;
+                            Thread.sleep(2000);
+                            break;
+                        default:
+                            System.out.println("Opción escogida incorrecta");
+                            break;
                     }
-
-                    System.out.println("\n===========================================================\n");
-
-                    Thread.sleep(2000);
-                    break;
-                case 5:
-                    System.out.println("\n===========================================================\n");
-
-                    System.out.println("Estadisticas actuales: \n");
-
-                    System.out.println("🔥 Energia: " + energia);
-                    System.out.println("🍔 Hambre: " + hambre);
-                    System.out.println("🎉 Felicidad: " + felicidad);
-                    System.out.println("💵 Dinero: " + dinero +"\n");
-
-                    if (felicidad > 7 && hambre > 4 && energia > 5) {
-                        System.out.println(skin + nombre + ": Feliz y activo 😁");
-                    } else if (energia > 7 && hambre < 5) {
-                        System.out.println(skin + nombre + ": Está hiperactivo 🫨");
-                    } else if (felicidad <= 3 && energia <= 3 && hambre <= 3){
-                        System.out.println(skin + nombre + ": Está en las ultimas 😵");
-                    }
-
-                    if (hambre <= 3) {
-                        System.out.println(skin + nombre + ": Tiene hambre, deberias darle de comer 🍥");
-                    }
-                    if (energia <= 3) {
-                        System.out.println(skin + nombre + ": Está muy cansado, necesita dormir 😴");
-                    }
-                    if (felicidad <= 3) {
-                        System.out.println(skin + " " +nombre + ": Está triste, juega con él 🛝");
-                    }
-                    System.out.println("\n===========================================================\n");
-
-                    Thread.sleep(4000);
-                    break;
-                case 6:
-                    System.out.println("\n\n\n===========================================================\n");
-
-                    System.out.println("Saliendo del programa");
-
-                    System.out.println("\n===========================================================\n");
-
-                    jugar = false;
-                    Thread.sleep(2000);
-                    break;
-            }
             energia = Math.min(energia, 20);
             hambre = Math.min(hambre, 20);
             felicidad = Math.min(felicidad, 20);
