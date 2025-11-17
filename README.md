@@ -21,6 +21,35 @@ tomar decisiones que afectan su bienestar.
 -   Final de juego si alguno de los atributos llega a un nivel crítico.
 
 
+## Menú de Acciones
+
+## 1 - Consumibles
+Permite usar los recursos disponibles para mejorar los estados del tamagotchi.  
+- Comida: aumenta hambre y reduce energía.  
+- Bebida: aumenta hambre y energía.  
+- Juguete: aumenta felicidad y reduce energía.  
+- También se puede elegir no usar ningún consumible.
+
+## 2 - Jugar
+Inicia un minijuego con el tamagotchi para aumentar felicidad y obtener monedas.  
+Opciones de juego:  
+- Dados  
+- Piedra, Papel o Tijera  
+- Pulso Digital
+
+## 3 - Dormir
+El tamagotchi descansa, lo que aumenta su energía pero puede reducir ligeramente la felicidad.
+
+## 4 - Tienda
+Permite comprar o vender consumibles utilizando las monedas disponibles.  
+- Comprar: comida, bebida o juguetes.  
+- Vender: comida, bebida o juguetes sobrantes.
+
+## 5 - Ver estado
+Muestra los valores actuales de energía, hambre, felicidad y dinero.  
+Proporciona indicaciones sobre el estado general del tamagotchi y posibles necesidades.
+
+
 ## Instalación
 
 ``` bash
