@@ -8,6 +8,12 @@ public class Main {
         String nombre = "";
         String skin = "";
 
+        System.out.println("===========================================================\n");
+        System.out.println("\n                      Tamagotchi                          \n");
+        System.out.println("\n===========================================================\n");
+
+        System.out.println("\n\n\n===========================================================\n");
+
         System.out.println("\nIntroduce el nombre de tu mascota:");
         nombre = print.nextLine();
 
@@ -22,11 +28,13 @@ public class Main {
         } else {
             System.out.println("Número introducido incorrecto");
         }
+        System.out.println("\n===========================================================\n\n");
 
         Acciones.acciones(print, skin, nombre);
     }
 
     public static String skin(Scanner print) throws InterruptedException {
+        System.out.println("\n\n\n===========================================================\n");
 
         System.out.println("Escoge la skin de tu tamagotchi\n");
 
@@ -36,6 +44,9 @@ public class Main {
         System.out.println("4 - 🕊️");
 
         int skinEscogida = print.nextInt();
+
+        System.out.println("\n\n\n===========================================================\n");
+
 
         switch (skinEscogida) {
             case 1: System.out.println("Has escogido 🐷"); return "🐷";
@@ -47,6 +58,8 @@ public class Main {
     }
 
     public static void modificar(Scanner print, String nombre, String skin) throws InterruptedException {
+        System.out.println("\n\n\n===========================================================\n");
+
         System.out.println("Que te gustaría modificar? (1: Nombre / 2: Skin)");
         int eleccionModificar = print.nextInt();
         Thread.sleep(1000);
@@ -67,6 +80,8 @@ public class Main {
             Thread.sleep(1000);
 
         }
+        System.out.println("\n\n\n===========================================================\n");
+
     }
 
 }
