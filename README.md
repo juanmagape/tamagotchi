@@ -9,7 +9,7 @@ feliz y sano.
 
 Este proyecto permite a los usuarios interactuar con un tamagotchi
 virtual. Tendrás que atender sus necesidades, monitorizar su estado y
-tomar decisiones que afectan su bienestar. 
+tomar decisiones que afectan su bienestar. En caso de que alguna de los 3 valores esenciales llegue a 0, tu tamagotchi morirá.
 
 ## Características
 
