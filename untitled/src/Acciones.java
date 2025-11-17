@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Timer;
 
 public class Acciones {
 
@@ -12,6 +13,8 @@ public class Acciones {
        static boolean jugar = true;
 
     public static void acciones(Scanner print, String skin, String nombre) throws InterruptedException {
+
+        Timer timer = new Timer();
 
         if (energia == 0 || hambre == 0 || felicidad == 0) {
             System.out.println("El tamagotchi ha muerto");
@@ -47,6 +50,8 @@ public class Acciones {
                     System.out.println("\n\n{1} Comida: " + cantidadComida + " ( +3 Hambre, -1 Energia )");
                     System.out.println("{2} Bebida: " + cantidadBebida + " ( +1 Hambre, +2 Energia )");
                     System.out.println("{3} Juguete: " + cantidadJuguete + " ( +3 Felicidad, -1 Energia )");
+                    System.out.println("{4} Ninguno");
+
                     int eleccionConsumible = print.nextInt();
 
                     switch (eleccionConsumible) {
@@ -96,6 +101,9 @@ public class Acciones {
                             Thread.sleep(2000);
 
                             break;
+                        case 4:
+                            System.out.println("Has decidido no utilizar consumibles.");
+                            break;
                         default:
                             System.out.println("Número introducido incorrecto");
                             Thread.sleep(2000);
@@ -144,52 +152,113 @@ public class Acciones {
 
                     System.out.println("Bienvenido a la tienda");
                     System.out.println("\nDinero actual: " + dinero);
-                    System.out.println("\n\n{1} Comida: 3 monedas ( +3 Hambre, -1 Energia )");
-                    System.out.println("{2} Bebida: 2 monedas ( +1 Hambre, +2 Energia )");
-                    System.out.println("{3} Juguete: 3 monedas ( +3 Felicidad, -1 Energia )");
 
-                    System.out.println("\nQue quieres comprar?");
-                    int eleccionTienda = print.nextInt();
-                    int cantidadCompra;
+                    System.out.println("Quieres comprar {1} o vender {2}");
+                    int eleccion = print.nextInt();
 
-                    switch (eleccionTienda) {
+                    if (eleccion == 1) {
+                        System.out.println("\n\n{1} Comida: 3 monedas ( +3 Hambre, -1 Energia )");
+                        System.out.println("{2} Bebida: 2 monedas ( +1 Hambre, +2 Energia )");
+                        System.out.println("{3} Juguete: 3 monedas ( +3 Felicidad, -1 Energia )");
 
-                        case 1:
-                            System.out.println("Has elegido comprar comida, cuanta cantidad quieres comprar?");
-                            cantidadCompra = print.nextInt();
-                            if (cantidadCompra * 3 > dinero) {
-                                System.out.println("No tienes suficiente dinero");
-                            } else {
-                                System.out.println("Comida comprada");
-                                cantidadComida += cantidadCompra;
-                                dinero -= cantidadCompra * 3;
-                            }
-                            break;
-                        case 2:
-                            System.out.println("Has elegido comprar bebida, cuanta cantidad quieres comprar?");
-                            cantidadCompra = print.nextInt();
+                        System.out.println("\nQue quieres comprar?");
+                        int eleccionTienda = print.nextInt();
+                        int cantidadCompra;
 
-                            if (cantidadCompra * 2 > dinero) {
-                                System.out.println("No tienes suficiente dinero");
-                            } else {
-                                System.out.println("Bebida comprada");
-                                cantidadBebida += cantidadCompra;
-                                dinero -= cantidadCompra * 3;
-                            }
-                            break;
-                        case 3:
-                            System.out.println("Has elegido comprar juguetes, cuanta cantidad quieres comprar?");
-                            cantidadCompra = print.nextInt();
+                        switch (eleccionTienda) {
 
-                            if (cantidadCompra * 3 > dinero) {
-                                System.out.println("No tienes suficiente dinero");
-                            } else {
-                                System.out.println("Juguete comprado");
-                                cantidadJuguete += cantidadCompra;
-                                dinero -= cantidadCompra * 3;
-                            }
-                            break;
-                            }
+                            case 1:
+                                System.out.println("Has elegido comprar comida, cuanta cantidad quieres comprar?");
+                                cantidadCompra = print.nextInt();
+                                if (cantidadCompra * 3 > dinero) {
+                                    System.out.println("No tienes suficiente dinero");
+                                } else {
+                                    System.out.println("Comida comprada");
+                                    cantidadComida += cantidadCompra;
+                                    dinero -= cantidadCompra * 3;
+                                }
+                                break;
+                            case 2:
+                                System.out.println("Has elegido comprar bebida, cuanta cantidad quieres comprar?");
+                                cantidadCompra = print.nextInt();
+
+                                if (cantidadCompra * 2 > dinero) {
+                                    System.out.println("No tienes suficiente dinero");
+                                } else {
+                                    System.out.println("Bebida comprada");
+                                    cantidadBebida += cantidadCompra;
+                                    dinero -= cantidadCompra * 3;
+                                }
+                                break;
+                            case 3:
+                                System.out.println("Has elegido comprar juguetes, cuanta cantidad quieres comprar?");
+                                cantidadCompra = print.nextInt();
+
+                                if (cantidadCompra * 3 > dinero) {
+                                    System.out.println("No tienes suficiente dinero");
+                                } else {
+                                    System.out.println("Juguete comprado");
+                                    cantidadJuguete += cantidadCompra;
+                                    dinero -= cantidadCompra * 3;
+                                }
+                                break;
+                            default:
+                                System.out.println("Opción introducida incorrecta.");
+                                break;
+                        }
+                    } else if (eleccion == 2) {
+                        System.out.println("Que objeto quieres vender?");
+                        System.out.println("\n\n{1} Comida: 3 monedas ( Tienes: " + cantidadComida + " )");
+                        System.out.println("{2} Bebida: 2 monedas ( Tienes: " + cantidadBebida +  " )");
+                        System.out.println("{3} Juguete: 3 monedas ( Tienes: " + cantidadJuguete + " )");
+
+                        int eleccionTienda = print.nextInt();
+                        int cantidadVenta;
+
+                        switch (eleccionTienda) {
+
+                            case 1:
+                                System.out.println("Has elegido vender comida, cuanta cantidad quieres vender?");
+                                cantidadVenta = print.nextInt();
+                                if (cantidadVenta > cantidadComida) {
+                                    System.out.println("No tienes suficiente comida");
+                                } else {
+                                    System.out.println("Comida vendida");
+                                    cantidadComida -= cantidadVenta;
+                                    dinero += cantidadVenta * 3;
+                                }
+                                break;
+                            case 2:
+                                System.out.println("Has elegido vender bebidas, cuanta cantidad quieres vender?");
+                                cantidadVenta = print.nextInt();
+                                if (cantidadVenta > cantidadBebida) {
+                                    System.out.println("No tienes suficiente bebida");
+                                } else {
+                                    System.out.println("Bebida vendida");
+                                    cantidadBebida -= cantidadVenta;
+                                    dinero += cantidadVenta * 3;
+                                }
+                                break;
+                            case 3:
+                                System.out.println("Has elegido vender juguetes, cuanta cantidad quieres vender?");
+                                cantidadVenta = print.nextInt();
+                                if (cantidadVenta > cantidadJuguete) {
+                                    System.out.println("No tienes suficiente juguetes");
+                                } else {
+                                    System.out.println("Juguetes vendidos");
+                                    cantidadJuguete -= cantidadVenta;
+                                    dinero += cantidadVenta * 3;
+                                }
+                                break;
+                            default:
+                                System.out.println("Opción introducida incorrecta.");
+                                break;
+                        }
+
+                    } else {
+                            System.out.println("Opción introducida incorrecta.");
+                    }
+
 
                             System.out.println("\n===========================================================\n");
 
@@ -243,6 +312,7 @@ public class Acciones {
             energia = Math.min(energia, 20);
             hambre = Math.min(hambre, 20);
             felicidad = Math.min(felicidad, 20);
+            timer.scheduleAtFixedRate(tarea, 60000, 60000);
         }
     }
 
@@ -321,7 +391,7 @@ public class Acciones {
 
         System.out.println("\nFuerza mínima: 1 - Fuerza máxima 5\n\n");
         int jugada = (int) (Math.random() * 5) + 1;
-        int jugadaTama = (int) (Math.random() * 5) + 4;
+        int jugadaTama = (int) (Math.random() * 5) + 1;
 
         System.out.println("Jugador: " + jugada);
         System.out.println("Tamagotchi: " + jugadaTama);
